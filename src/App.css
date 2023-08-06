@@ -1,38 +1,276 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+:root {}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+nav {
+  background: #0570B0;
   color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-list {
+  display: flex;
+  margin-inline: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-item {
+  margin-inline: 1rem;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #C79535;
+}
+
+main {
+  gap: 1.5rem;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.sidebar-icons {
+  grid-column: 1/2;
+  grid-row: 1/6;
+  margin-left: 0.5rem;
+}
+
+
+.report-heading {
+  grid-column: 2/12;
+  grid-row: 1/2;
+  display: flex;
+  margin-top: 1rem;
+}
+
+
+.report-heading h1 {
+  color: #0570B0;
+  font-size: 22.28px;
+}
+
+.report-icons img {
+  margin-inline: 1rem;
+}
+
+.issue-status,
+.contributors {
+  border: 1px solid rgb(208, 194, 194);
+  border-radius: 0.5rem;
+}
+
+.issue-status {
+  border: 1px solid rgb(208, 194, 194);
+  border-radius: 0.5rem;
+  grid-column: 2/12;
+  grid-row: 2/6;
+  padding: 1.5rem;
+}
+
+.contributors {
+  grid-column: 2/12;
+  grid-row: 6/12;
+  padding: 1.5rem;
+}
+
+.text-align {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: #46376F;
+}
+
+.text-center {
+  display: flex;
+  align-items: center;
+  color: #7141DC;
+}
+
+.opacity-level {
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.graphs-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+
+
+.orange-graph {
+  height: 50px;
+  width: 80%;
+  background-color: #FF9B85;
+}
+
+.green-graph {
+  height: 50px;
+  width: 60%;
+  background-color: #17BEBB;
+}
+
+.red-graph {
+  height: 50px;
+  width: 40%;
+  background-color: #EE6055;
+}
+
+.graph-no {
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.issues {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.issue-warning {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-inline: 0.5rem;
+}
+
+.issue-text {
+  font-size: 12px;
+  display: flex;
+  align-content: center;
+}
+
+
+.created {
+  background-color: #E5A158;
+}
+
+.resolved {
+  background-color: #5E4994;
+}
+
+.progress {
+  background-color: #EBE4FA;
+}
+
+.issues-reports {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem;
+}
+
+.report-no {
+  color: #46376F;
+  font-weight: 700;
+}
+
+.report-data {
+  color: #46376F;
+  margin-top: -20px;
+  font-size: 14px;
+}
+
+.hr-dotted {
+  border: 1px dotted;
+  opacity: 0.6;
+}
+
+.issue-content {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 1rem;
+}
+
+.issue-textcontent {
+  margin-inline: 1rem;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.fa-exclamation-triangle {
+  color: #FE8C83;
+  font-size: 2rem;
+}
+
+.fa-sort-desc {
+  color: #FE8C83;
+  font-size: 4rem;
+}
+
+
+th {
+  font-weight: 500;
+  color: #B5B5B5;
+  text-align: start;
+}
+
+table {
+  width: 80%;
+  margin: 0.5rem;
+}
+
+.score-color {
+  color: #7141DC;
+}
+
+.table-head {
+  font-size: 13px;
+  margin-left: -1.5rem;
+}
+
+
+@media screen and (min-width: 700px) {
+  .issue-status {
+    grid-column: 2/6;
   }
-  to {
-    transform: rotate(360deg);
+
+  .contributors {
+    grid-column: 6/12;
+    grid-row: 2/6;
+  }
+
+  .report-heading {
+    grid-column: 2/12;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+
+  .sidebar-icons img {
+    display: block;
+    margin-top: 1rem;
+    margin-inline: rem;
+  }
+
+  .table-head {
+    font-size: 16px;
+    margin-left: -1.5rem;
+  }
+
+  table {
+    min-width: 80%;
+    min-height: 60%;
+    margin: 2rem;
+  }
+
+  .row-data {
+    align-items: center;
   }
 }
