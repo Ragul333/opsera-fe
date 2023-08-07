@@ -1,5 +1,6 @@
 import React from "react";
 import Bars from '../assets/bars.png';
+import { navList } from "../contstants";
 
 const NavBar = () => {
     return <nav>
@@ -7,10 +8,11 @@ const NavBar = () => {
             <img src={Bars} />
         </div>
         <div className="nav-list">
-            <p className="nav-item">Dashboards</p>
-            <span className="border"></span>
-            <p className="nav-item">Salesforce</p>
-            <p className="nav-item">Engineer Report</p>
+            {
+                navList.map((data)=>{
+                    return <p className="nav-item">{data}</p>
+                })
+            }
         </div>
     </nav>
 }

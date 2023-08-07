@@ -9,6 +9,8 @@ import settingsIcon from './assets/settings.png'
 import IssueCard from './components/IssueCard';
 import ContributorCard from './components/ContributorCard';
 
+let sideBarIcons = [homeIcon, restIcons];
+let reportIcons = [questionIcon, sortIcon, settingsIcon];
 
 function App() {
   return (
@@ -16,15 +18,20 @@ function App() {
       <NavBar />
       <main className='content'>
         <div className='sidebar-icons'>
-          <img src={homeIcon} />
-          <img src={restIcons} />
+          {
+            sideBarIcons.map((data) => {
+              return <img src={data} alt={data} />
+            })
+          }
         </div>
         <div className='report-heading'>
           <h1><img src={headerIcon} /> Engineer Report</h1>
           <div className='report-icons'>
-            <img src={questionIcon} />
-            <img src={sortIcon} />
-            <img src={settingsIcon} />
+            {
+              reportIcons.map((data) => {
+                return <img src={data} alt={data} />
+              })
+            }
           </div>
         </div>
         <div className='issue-status'>

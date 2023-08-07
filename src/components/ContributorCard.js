@@ -1,41 +1,8 @@
 import React from "react";
 import questionIcon from '../assets/question.png'
 import UsersTable from "./UsersTable";
+import { tableHead, users } from "../contstants";
 
-let users = [
-    {
-        id: 1,
-        name: 'Srinivas',
-        closed: 68,
-        reviewed: 68,
-        score: 987,
-        isYellow: true
-    },
-    {
-        id: 2,
-        name: 'Tom',
-        closed: 48,
-        reviewed: 48,
-        score: 793,
-        isYellow: true
-    },
-    {
-        id: 3,
-        name: 'Nawaz',
-        closed: 42,
-        reviewed: 42,
-        score: 682,
-        isYellow: false
-    },
-    {
-        id: 4,
-        name: 'Noah',
-        closed: 34,
-        reviewed: 34,
-        score: 500,
-        isYellow: false
-    },
-]
 const ContributorCard = () => {
     return (<>
         <div className="text-align">
@@ -45,10 +12,11 @@ const ContributorCard = () => {
         <table>
             <tr className="table-head">
                 <th className="first-head"></th>
-                <th>Contributors</th>
-                <th>Closed</th>
-                <th>Reviewed</th>
-                <th>Score</th>
+                {
+                    tableHead.map((data) => {
+                        return <th>{data}</th>
+                    })
+                }
             </tr>
             {
                 users.map((data) => {
